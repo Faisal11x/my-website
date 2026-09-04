@@ -157,14 +157,82 @@ const SKILLS = {
   },
 };
 
-const CERTIFICATIONS = [
-  { en: "Power BI", ar: "Power BI" },
-  { en: "Six Sigma", ar: "Six Sigma" },
-  { en: "Excel", ar: "Excel" },
-  { en: "Logistics & Operations in Events", ar: "لوجستيات وعمليات الفعاليات" },
-  { en: "E-Retail & Supply Chain", ar: "التجارة الإلكترونية وسلسلة الإمداد" },
-  { en: "Event Logistics Management", ar: "إدارة الخدمات اللوجستية للفعاليات" },
-  { en: "Supply Chain Logistics", ar: "لوجستيات سلسلة الإمداد" },
+// Courses & certifications — each links to its actual certificate image
+// (assets/certificates/<id>.png). National ID numbers visible on the
+// original Doroob certificates have been redacted from those images.
+const COURSES = [
+  {
+    id: "supply-chain-logistics",
+    title: { en: "Supply Chain Logistics", ar: "لوجستيات سلسلة الإمداد" },
+    issuer: { en: "Rutgers University · Coursera", ar: "جامعة روتجرز · Coursera" },
+    date: { en: "Jul 2026", ar: "يوليو 2026" },
+    learned: { en: "A university-level view of logistics within the wider supply chain — transportation, warehousing, and network design.", ar: "منظور أكاديمي للوجستيات ضمن سلسلة الإمداد الأوسع — النقل، التخزين، وتصميم الشبكات." },
+    icon: "truck",
+  },
+  {
+    id: "power-bi",
+    title: { en: "Harnessing the Power of Data with Power BI", ar: "توظيف قوة البيانات باستخدام Power BI" },
+    issuer: { en: "Microsoft · Coursera", ar: "Microsoft · Coursera" },
+    date: { en: "Apr 2026", ar: "أبريل 2026" },
+    learned: { en: "Building interactive dashboards and reports in Power BI to turn raw data into decisions.", ar: "بناء لوحات تحكم وتقارير تفاعلية في Power BI لتحويل البيانات الخام إلى قرارات." },
+    icon: "barChart",
+  },
+  {
+    id: "excel-data-analysis",
+    title: { en: "Preparing Data for Analysis with Microsoft Excel", ar: "تجهيز البيانات للتحليل باستخدام Excel" },
+    issuer: { en: "Microsoft · Coursera", ar: "Microsoft · Coursera" },
+    date: { en: "Apr 2026", ar: "أبريل 2026" },
+    learned: { en: "Cleaning, structuring, and preparing raw data in Excel before analysis.", ar: "تنظيف وتنظيم البيانات الخام في Excel تمهيدًا لتحليلها." },
+    icon: "document",
+  },
+  {
+    id: "six-sigma",
+    title: { en: "Six Sigma Methodology", ar: "منهجية Six Sigma" },
+    issuer: { en: "Doroob (HRDF)", ar: "دروب (صندوق تنمية الموارد البشرية)" },
+    date: { en: "Oct 2025", ar: "أكتوبر 2025" },
+    learned: { en: "Six Sigma fundamentals for reducing process variation and improving quality.", ar: "أساسيات منهجية Six Sigma لتقليل التذبذب في العمليات وتحسين الجودة." },
+    icon: "checkCircle",
+  },
+  {
+    id: "eretail-supply-chain",
+    title: { en: "Fundamentals of Electronic Retail and Supply Chain", ar: "أساسيات التجزئة الإلكترونية وسلاسل الإمداد" },
+    issuer: { en: "Zid · Doroob", ar: "زد · دروب" },
+    date: { en: "Oct 2025", ar: "أكتوبر 2025" },
+    learned: { en: "How e-commerce platforms connect to fulfillment and supply chain operations.", ar: "كيف ترتبط منصات التجارة الإلكترونية بعمليات التنفيذ وسلاسل الإمداد." },
+    icon: "briefcase",
+  },
+  {
+    id: "event-logistics-management",
+    title: { en: "Event Logistics Management", ar: "إدارة اللوجستيات في الفعاليات" },
+    issuer: { en: "General Entertainment Authority · Doroob", ar: "الهيئة العامة للترفيه · دروب" },
+    date: { en: "Oct 2025", ar: "أكتوبر 2025" },
+    learned: { en: "Core principles of planning and managing logistics for large-scale events.", ar: "أساسيات تخطيط وإدارة اللوجستيات للفعاليات الكبرى." },
+    icon: "truck",
+  },
+  {
+    id: "logistics-events",
+    title: { en: "Logistics and Operational Services at Exhibitions and Conferences", ar: "الخدمات اللوجستية والتشغيلية في المعارض والمؤتمرات" },
+    issuer: { en: "Saudi Conventions & Exhibitions General Authority · Doroob", ar: "الهيئة العامة للمعارض والمؤتمرات · دروب" },
+    date: { en: "Oct 2025", ar: "أكتوبر 2025" },
+    learned: { en: "How exhibitions and conferences run their logistics, from setup through on-site operational coordination.", ar: "كيف تُدار لوجستيات المعارض والمؤتمرات، من التجهيز إلى التنسيق التشغيلي في الموقع." },
+    icon: "building",
+  },
+  {
+    id: "supply-chain-management",
+    title: { en: "Supply Chain Management", ar: "إدارة سلاسل الإمداد" },
+    issuer: { en: "Doroob (HRDF)", ar: "دروب (صندوق تنمية الموارد البشرية)" },
+    date: { en: "May 2025", ar: "مايو 2025" },
+    learned: { en: "Foundational concepts of supply chain management — flow, coordination, and value creation.", ar: "المفاهيم الأساسية لإدارة سلاسل الإمداد — التدفق، التنسيق، وخلق القيمة." },
+    icon: "truck",
+  },
+  {
+    id: "excel-doroob",
+    title: { en: "Microsoft Excel", ar: "برنامج جداول البيانات Excel" },
+    issuer: { en: "Doroob (HRDF)", ar: "دروب (صندوق تنمية الموارد البشرية)" },
+    date: { en: "May 2025", ar: "مايو 2025" },
+    learned: { en: "Core Excel skills for building and managing spreadsheets.", ar: "المهارات الأساسية في برنامج Excel لإنشاء وإدارة جداول البيانات." },
+    icon: "document",
+  },
 ];
 
 // Education + languages — shown as two compact cards in the About section
@@ -481,10 +549,36 @@ function renderSkills() {
       .join("");
   }
 
-  const strip = document.getElementById("certStrip");
-  if (strip) {
-    strip.innerHTML = CERTIFICATIONS.map((c) => `<span class="cert-chip">${bi(c)}</span>`).join("");
-  }
+}
+
+function renderCourses() {
+  const grid = document.getElementById("coursesGrid");
+  if (!grid) return;
+  grid.innerHTML = COURSES.map(
+    (c) => `
+    <div class="course-card reveal" data-cert="${c.id}" tabindex="0" role="button" aria-label="${c.title.en}">
+      <div class="icon-wrap">${icon(c.icon, 20)}</div>
+      <h3>${bi(c.title)}</h3>
+      <p class="course-meta">${bi(c.issuer)} · ${bi(c.date)}</p>
+      <p class="course-learned">${bi(c.learned)}</p>
+      <span class="course-view">
+        <span class="t-en">View Certificate</span>
+        <span class="t-ar">عرض الشهادة</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </span>
+    </div>`
+  ).join("");
+
+  grid.querySelectorAll(".course-card").forEach((card) => {
+    const open = () => openCertLightbox(card.dataset.cert);
+    card.addEventListener("click", open);
+    card.addEventListener("keydown", (ev) => {
+      if (ev.key === "Enter" || ev.key === " ") {
+        ev.preventDefault();
+        open();
+      }
+    });
+  });
 }
 
 function renderDashboard() {
@@ -587,6 +681,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSupplyChain();
   renderProjects();
   renderSkills();
+  renderCourses();
   renderDashboard();
   renderContact();
 
@@ -601,6 +696,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroParallax();
   initBackToTop();
   initQrWidget();
+  initCertLightbox();
 
   const year = new Date().getFullYear();
   const yearEl = document.getElementById("year");
@@ -1032,4 +1128,48 @@ function initQrWidget() {
       localStorage.setItem("qrDismissed", "1");
     });
   }
+}
+
+/* ---------- Certificate lightbox ---------- */
+let certLightboxLastFocus = null;
+
+function openCertLightbox(certId) {
+  const course = COURSES.find((c) => c.id === certId);
+  const lightbox = document.getElementById("certLightbox");
+  const img = document.getElementById("certLightboxImg");
+  const caption = document.getElementById("certLightboxCaption");
+  if (!course || !lightbox || !img) return;
+
+  img.src = `assets/certificates/${course.id}.png`;
+  img.alt = course.title.en;
+  if (caption) caption.innerHTML = `${bi(course.title)} — ${bi(course.issuer)}`;
+
+  certLightboxLastFocus = document.activeElement;
+  lightbox.classList.add("is-open");
+  lightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("lock-scroll");
+  const closeBtn = document.getElementById("certLightboxClose");
+  if (closeBtn) closeBtn.focus();
+}
+
+function closeCertLightbox() {
+  const lightbox = document.getElementById("certLightbox");
+  if (!lightbox) return;
+  lightbox.classList.remove("is-open");
+  lightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("lock-scroll");
+  if (certLightboxLastFocus) certLightboxLastFocus.focus();
+}
+
+function initCertLightbox() {
+  const lightbox = document.getElementById("certLightbox");
+  const backdrop = document.getElementById("certLightboxBackdrop");
+  const closeBtn = document.getElementById("certLightboxClose");
+  if (!lightbox) return;
+
+  if (backdrop) backdrop.addEventListener("click", closeCertLightbox);
+  if (closeBtn) closeBtn.addEventListener("click", closeCertLightbox);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeCertLightbox();
+  });
 }
