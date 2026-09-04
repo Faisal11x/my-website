@@ -73,6 +73,7 @@ const EXPERIENCE = [
     role: { en: "Supply Chain Intern", ar: "متدرب سلسلة الإمداد" },
     company: { en: "LogiPoint — Bonded & Re-export Zone, Jeddah Islamic Port", ar: "LogiPoint — منطقة الإيداع وإعادة التصدير، ميناء جدة الإسلامي" },
     period: { en: "Aug 2025 – Jan 2026", ar: "أغسطس 2025 – يناير 2026" },
+    doc: { id: "logipoint-supply-chain-training" },
     points: [
       { en: "Rotated across Documentation, Warehouse, Yard, Container Inspection Yard (CIY), VAS, Transportation, Customs Clearance, Customer Service, Sales, and Government Affairs", ar: "تدريب دوّار شمل التوثيق، المستودع، الياردة، ساحة فحص الحاويات (CIY)، خدمات القيمة المضافة (VAS)، النقل، التخليص الجمركي، خدمة العملاء، المبيعات، والشؤون الحكومية" },
       { en: "Built practical expertise in documentation control and import/export compliance within a leading logistics zone", ar: "بناء خبرة عملية في ضبط التوثيق والامتثال لأنظمة الاستيراد والتصدير ضمن منطقة لوجستية رائدة" },
@@ -284,6 +285,13 @@ const TAMHEER_DOC = {
   id: "tamheer-hrdf-certificate",
   title: { en: "On-the-Job Training Certificate (Tamheer)", ar: "شهادة التدريب على رأس العمل (تمهير)" },
   issuer: { en: "Human Resources Development Fund (HRDF)", ar: "صندوق تنمية الموارد البشرية (هدف)" },
+};
+
+// Supporting proof for the LogiPoint experience entry.
+const LOGIPOINT_DOC = {
+  id: "logipoint-supply-chain-training",
+  title: { en: "Training Certificate — Supply Chain Management", ar: "شهادة تدريب — إدارة سلسلة الإمداد" },
+  issuer: { en: "LogiPoint", ar: "LogiPoint" },
 };
 
 // Projects — conceptual/illustrative, clearly labeled as such
@@ -1199,7 +1207,7 @@ function openCertLightbox(certId) {
   const course =
     COURSES.find((c) => c.id === certId) ||
     EDUCATION_DOCS.find((c) => c.id === certId) ||
-    (TAMHEER_DOC.id === certId ? TAMHEER_DOC : null);
+    [TAMHEER_DOC, LOGIPOINT_DOC].find((c) => c.id === certId);
   const lightbox = document.getElementById("certLightbox");
   const img = document.getElementById("certLightboxImg");
   const caption = document.getElementById("certLightboxCaption");
