@@ -1,191 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Faisal Mohammed Al-Harbi — Procurement Specialist</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faisal Mohammed Al-Harbi | Procurement &amp; Supply Chain Professional</title>
+<meta name="description" content="Portfolio of Faisal Mohammed Al-Harbi — Procurement Specialist and Supply Chain Professional specializing in strategic sourcing, supplier management, RFQ/bidding, Oracle Fusion, and data-driven procurement operations." />
+<meta name="theme-color" content="#07080b" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Faisal Mohammed Al-Harbi | Procurement & Supply Chain Professional" />
+<meta property="og:description" content="Strategic sourcing, supplier management, and data-driven procurement — explore the portfolio." />
+<script>
+  (function () {
+    var lang = localStorage.getItem('lang') || (navigator.language && navigator.language.indexOf('ar') === 0 ? 'ar' : 'en');
+    var theme = localStorage.getItem('theme') || 'dark';
+    var root = document.documentElement;
+    root.setAttribute('data-lang', lang);
+    root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    root.setAttribute('lang', lang);
+    root.setAttribute('data-theme', theme);
+    document.title = lang === 'ar'
+      ? 'فيصل محمد الحربي | متخصص مشتريات وسلسلة إمداد'
+      : 'Faisal Mohammed Al-Harbi | Procurement & Supply Chain Professional';
+  })();
+</script>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#home" class="logo">Faisal Al-Harbi</a>
-      <nav class="nav">
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-list" id="navList">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+<a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-ar">تخطَّ إلى المحتوى</span></a>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <svg class="preloader-network" viewBox="0 0 240 160" width="240" height="160">
+    <g class="preloader-lines" stroke="currentColor" stroke-width="1" fill="none">
+      <line x1="30" y1="40" x2="120" y2="20" />
+      <line x1="120" y1="20" x2="210" y2="45" />
+      <line x1="30" y1="40" x2="60" y2="120" />
+      <line x1="120" y1="20" x2="120" y2="90" />
+      <line x1="120" y1="90" x2="60" y2="120" />
+      <line x1="120" y1="90" x2="190" y2="115" />
+      <line x1="210" y1="45" x2="190" y2="115" />
+    </g>
+    <g class="preloader-nodes" fill="currentColor">
+      <circle cx="30" cy="40" r="4" />
+      <circle cx="120" cy="20" r="4" />
+      <circle cx="210" cy="45" r="4" />
+      <circle cx="120" cy="90" r="4" />
+      <circle cx="60" cy="120" r="4" />
+      <circle cx="190" cy="115" r="4" />
+    </g>
+  </svg>
+  <p class="preloader-text">
+    <span class="t-en">Connecting the supply chain<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+    <span class="t-ar">جاري ربط سلسلة الإمداد<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  </p>
+</div>
+
+<!-- ============ CUSTOM CURSOR (desktop only, injected/activated via JS) ============ -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ============ NAVIGATION ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="nav-inner">
+    <a href="#home" class="brand">FA<span>.</span></a>
+
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#home" class="nav-link active" data-nav><span class="t-en">Home</span><span class="t-ar">الرئيسية</span></a></li>
+        <li><a href="#about" class="nav-link" data-nav><span class="t-en">About</span><span class="t-ar">نبذة عني</span></a></li>
+        <li><a href="#experience" class="nav-link" data-nav><span class="t-en">Experience</span><span class="t-ar">الخبرات</span></a></li>
+        <li><a href="#procurement" class="nav-link" data-nav><span class="t-en">Procurement</span><span class="t-ar">المشتريات</span></a></li>
+        <li><a href="#supply-chain" class="nav-link" data-nav><span class="t-en">Supply Chain</span><span class="t-ar">سلسلة الإمداد</span></a></li>
+        <li><a href="#projects" class="nav-link" data-nav><span class="t-en">Projects</span><span class="t-ar">المشاريع</span></a></li>
+        <li><a href="#skills" class="nav-link" data-nav><span class="t-en">Skills</span><span class="t-ar">المهارات</span></a></li>
+        <li><a href="#contact" class="nav-link" data-nav><span class="t-en">Contact</span><span class="t-ar">تواصل</span></a></li>
+      </ul>
+    </nav>
+
+    <div class="toggle-group">
+      <button class="toggle-btn" id="langToggle" type="button" aria-label="Switch language">AR</button>
+      <button class="toggle-btn" id="themeToggle" type="button" aria-label="Switch theme">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <a href="#contact" class="btn btn-outline nav-cta"><span class="t-en">Let's Connect</span><span class="t-ar">تواصل معي</span></a>
     </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">Procurement Specialist</p>
-        <h1>Faisal Mohammed Al-Harbi</h1>
-        <p class="lead">
-          I manage end-to-end purchasing on Oracle Fusion, combining strong supplier
-          negotiation, RFQ analysis, and data-driven reporting to keep procurement
-          operations accurate, cost-effective, and on time.
-        </p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
-          <a href="https://www.linkedin.com/in/faisal-alharbi-062622360" class="btn btn-secondary" target="_blank" rel="noopener">View LinkedIn</a>
-        </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <canvas class="hero-canvas" id="networkCanvas" aria-hidden="true"></canvas>
+    <div class="hero-vignette" aria-hidden="true"></div>
+
+    <div class="container hero-content" id="heroContent">
+      <p class="status-pill">
+        <span class="status-dot"></span>
+        <span class="t-en">Open to Opportunities</span>
+        <span class="t-ar">متاح لفرص عمل جديدة</span>
+      </p>
+
+      <p class="eyebrow">
+        <span class="t-en">Procurement &amp; Supply Chain</span>
+        <span class="t-ar">المشتريات وسلسلة الإمداد</span>
+      </p>
+
+      <h1 class="hero-title">
+        <span class="t-en">Procurement &amp; Supply Chain<br>Professional</span>
+        <span class="t-ar">متخصص مشتريات<br>وسلسلة إمداد</span>
+      </h1>
+
+      <p class="hero-sub">
+        <span class="t-en">Transforming procurement operations through strategic sourcing, supplier management, data-driven decisions, and digital solutions.</span>
+        <span class="t-ar">تطوير عمليات المشتريات من خلال التوريد الاستراتيجي، إدارة الموردين، القرارات المبنية على البيانات، والحلول الرقمية.</span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#experience" class="btn btn-primary">
+          <span class="t-en">Explore My Experience</span>
+          <span class="t-ar">استعرض خبراتي</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost"><span class="t-en">Let's Connect</span><span class="t-ar">تواصل معي</span></a>
       </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-grid">
-          <p>
-            I'm a Procurement Specialist with hands-on experience managing
-            end-to-end purchasing on Oracle Fusion. I combine strong supplier
-            negotiation, RFQ analysis, and data-driven reporting to ensure
-            accurate, cost-effective, and timely procurement operations.
-          </p>
-          <p>
-            I also bring cross-functional logistics experience from a full
-            rotational internship at LogiPoint, giving me a practical
-            understanding of the supply chain from sourcing through to
-            transportation and customs clearance.
-          </p>
-        </div>
-
-        <div class="stats-grid">
-          <div class="card stat-card">
-            <p class="stat-number">500+</p>
-            <p>Purchase orders managed across 50+ suppliers</p>
-          </div>
-          <div class="card stat-card">
-            <p class="stat-number">SAR 1.33M</p>
-            <p>Total value of purchase orders handled</p>
-          </div>
-          <div class="card stat-card">
-            <p class="stat-number">SAR 220K+</p>
-            <p>Monthly purchasing volume, zero major errors</p>
-          </div>
-          <div class="card stat-card">
-            <p class="stat-number">7</p>
-            <p>Logistics divisions completed at LogiPoint</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-grid">
-          <div class="card">
-            <h3>Procurement Specialist — Nahdi Logistics</h3>
-            <p class="card-meta">2026 – Present</p>
-            <ul>
-              <li>Daily PR/PO validation on Oracle Fusion</li>
-              <li>Supplier performance tracking and follow-up</li>
-              <li>RFQ analysis and sourcing decisions</li>
-              <li>Cross-department coordination with warehouse, operations, and finance</li>
-              <li>Served twice as Acting Supervisor</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h3>Supply Chain Intern — LogiPoint</h3>
-            <p class="card-meta">2025 – 2026</p>
-            <ul>
-              <li>Rotated across documentation, warehouse, yard, CIY, VAS, transportation, customs clearance, and customer service</li>
-              <li>Gained practical expertise in import/export compliance and cargo flow</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section">
-      <div class="container">
-        <h2 class="section-title">Skills</h2>
-        <div class="tags">
-          <span class="tag">Procurement &amp; Vendor Management</span>
-          <span class="tag">RFQ &amp; Price Analysis</span>
-          <span class="tag">Strategic Sourcing</span>
-          <span class="tag">Tender Management</span>
-          <span class="tag">PO Processing (Oracle Fusion)</span>
-          <span class="tag">Spend Analysis</span>
-          <span class="tag">Supplier Relationship Management</span>
-          <span class="tag">Excel &amp; Power BI</span>
-          <span class="tag">Communication &amp; Follow-up</span>
-          <span class="tag">Problem Solving</span>
-        </div>
-
-        <h3 class="subsection-title">Certifications</h3>
-        <div class="tags">
-          <span class="tag tag-cert">Power BI</span>
-          <span class="tag tag-cert">Six Sigma</span>
-          <span class="tag tag-cert">Excel</span>
-          <span class="tag tag-cert">Logistics &amp; Operations in Events</span>
-          <span class="tag tag-cert">E-Retail &amp; Supply Chain</span>
-          <span class="tag tag-cert">Event Logistics Management</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <p class="contact-lead">Have an opportunity or a question? I'd love to hear from you.</p>
-        <div class="cards contact-cards">
-          <a class="card contact-card" href="tel:+966541161424">
-            <h3>Phone</h3>
-            <p>+966 54 116 1424</p>
-          </a>
-          <a class="card contact-card" href="mailto:faisalm24@hotmail.com">
-            <h3>Email</h3>
-            <p>faisalm24@hotmail.com</p>
-          </a>
-          <a class="card contact-card" href="https://www.linkedin.com/in/faisal-alharbi-062622360" target="_blank" rel="noopener">
-            <h3>LinkedIn</h3>
-            <p>faisal-alharbi-062622360</p>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Faisal Mohammed Al-Harbi. All rights reserved.</p>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
 
-    const navToggle = document.getElementById('navToggle');
-    const navList = document.getElementById('navList');
-    navToggle.addEventListener('click', () => {
-      const isOpen = navList.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-    });
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Profile</span><span class="t-ar">الملف الشخصي</span></p>
+      <h2 class="section-title reveal">
+        <span class="t-en">Where procurement discipline meets supply-chain thinking.</span>
+        <span class="t-ar">حيث ينسجم انضباط المشتريات مع فكر سلسلة الإمداد.</span>
+      </h2>
+      <p class="section-lead reveal">
+        <span class="t-en">A Procurement Specialist with a Bachelor's degree in Supply Chain Management from King Abdulaziz University and hands-on experience running end-to-end purchasing on Oracle Fusion — focused on accuracy, cost efficiency, and supplier performance.</span>
+        <span class="t-ar">أخصائي مشتريات حاصل على بكالوريوس في إدارة سلسلة الإمداد من جامعة الملك عبدالعزيز، مع خبرة عملية في إدارة دورة الشراء الكاملة عبر Oracle Fusion — بتركيز على الدقة، كفاءة التكلفة، وأداء الموردين.</span>
+      </p>
 
-    navList.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  </script>
+      <div class="capability-grid" id="capabilityGrid" aria-label="Core capabilities">
+        <!-- populated by script.js from CAPABILITIES data -->
+      </div>
+
+      <div class="edu-lang-grid" id="eduLangGrid" aria-label="Education and languages">
+        <!-- populated by script.js from EDUCATION / LANGUAGES data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Career Path</span><span class="t-ar">المسار المهني</span></p>
+      <h2 class="section-title reveal"><span class="t-en">Experience</span><span class="t-ar">الخبرات</span></h2>
+
+      <div class="stats-row" id="statsRow" aria-label="Career statistics">
+        <!-- populated by script.js from STATS data -->
+      </div>
+
+      <div class="timeline" id="timeline">
+        <!-- populated by script.js from EXPERIENCE data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCUREMENT WORKFLOW ============ -->
+  <section id="procurement" class="section">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Signature Visual</span><span class="t-ar">عنصر بصري مميز</span></p>
+      <h2 class="section-title reveal"><span class="t-en">The Procurement Cycle</span><span class="t-ar">دورة المشتريات</span></h2>
+      <p class="section-lead reveal">
+        <span class="t-en">A live view of how a purchase moves from need to delivered value — select a stage to see what happens inside it.</span>
+        <span class="t-ar">عرض حي لكيفية تحرك عملية الشراء من الحاجة إلى القيمة المُسلَّمة — اختر مرحلة لمعرفة تفاصيلها.</span>
+      </p>
+
+      <div class="workflow" id="workflow" aria-label="Procurement process">
+        <ol class="workflow-track" id="workflowTrack">
+          <!-- populated by script.js from WORKFLOW data -->
+        </ol>
+        <div class="workflow-detail" id="workflowDetail">
+          <!-- populated by script.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SUPPLY CHAIN ============ -->
+  <section id="supply-chain" class="section section-alt">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Control Center</span><span class="t-ar">مركز التحكم</span></p>
+      <h2 class="section-title reveal"><span class="t-en">Global Supply Chain Flow</span><span class="t-ar">تدفق سلسلة الإمداد العالمية</span></h2>
+      <p class="section-lead reveal">
+        <span class="t-en">From supplier to customer — a simplified view of how goods and information move through the chain.</span>
+        <span class="t-ar">من المورد إلى العميل — عرض مبسط لكيفية تدفق البضائع والمعلومات عبر السلسلة.</span>
+      </p>
+
+      <div class="supply-map" id="supplyMap" aria-label="Supply chain flow">
+        <!-- populated by script.js from SUPPLY_CHAIN data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Applied Thinking</span><span class="t-ar">تطبيق عملي</span></p>
+      <h2 class="section-title reveal"><span class="t-en">Projects</span><span class="t-ar">المشاريع</span></h2>
+
+      <div class="project-grid" id="projectGrid">
+        <!-- populated by script.js from PROJECTS data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Toolkit</span><span class="t-ar">الأدوات والمهارات</span></p>
+      <h2 class="section-title reveal"><span class="t-en">Skills</span><span class="t-ar">المهارات</span></h2>
+
+      <div class="skills-grid" id="skillsGrid">
+        <!-- populated by script.js from SKILLS data -->
+      </div>
+
+      <div class="cert-strip reveal" id="certStrip" aria-label="Certifications">
+        <!-- populated by script.js from CERTIFICATIONS data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DASHBOARD ============ -->
+  <section id="dashboard" class="section dashboard-section">
+    <div class="container">
+      <div class="dashboard-heading reveal">
+        <div>
+          <p class="section-tag"><span class="t-en">Analytics View</span><span class="t-ar">لوحة التحليلات</span></p>
+          <h2 class="section-title"><span class="t-en">Procurement Dashboard</span><span class="t-ar">لوحة تحليلات المشتريات</span></h2>
+        </div>
+        <span class="demo-badge">
+          <span class="t-en">Real figures — career totals + internal PO tracking data (Mar–Jul 2026)</span>
+          <span class="t-ar">أرقام حقيقية — إجماليات مسيرتي المهنية وبيانات تتبع داخلية (مارس–يوليو 2026)</span>
+        </span>
+      </div>
+
+      <div class="dashboard-grid" id="dashboardGrid">
+        <!-- populated by script.js from DASHBOARD data -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <p class="section-tag reveal"><span class="t-en">Get in Touch</span><span class="t-ar">تواصل معي</span></p>
+      <h2 class="section-title reveal">
+        <span class="t-en">Let's Build Better Supply Chains.</span>
+        <span class="t-ar">لنبني سلاسل إمداد أفضل.</span>
+      </h2>
+      <p class="section-lead reveal">
+        <span class="t-en">Open to procurement and supply chain opportunities — reach out any time.</span>
+        <span class="t-ar">متاح لفرص عمل في المشتريات وسلسلة الإمداد — تواصل في أي وقت.</span>
+      </p>
+
+      <a class="btn btn-primary reveal" href="assets/Faisal-Al-Harbi-CV.pdf" download style="margin-bottom: 40px;">
+        <span class="t-en">Download CV</span>
+        <span class="t-ar">تحميل السيرة الذاتية</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+      </a>
+
+      <div class="contact-grid" id="contactGrid">
+        <!-- populated by script.js from CONTACT data -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-tag">
+      <span class="t-en">Procurement <span>|</span> Supply Chain <span>|</span> Technology</span>
+      <span class="t-ar">المشتريات <span>|</span> سلسلة الإمداد <span>|</span> التقنية</span>
+    </p>
+    <p class="footer-copy">
+      <span class="t-en">&copy; <span id="year"></span> Faisal Mohammed Al-Harbi. All rights reserved.</span>
+      <span class="t-ar">&copy; <span id="year-ar"></span> فيصل محمد الحربي. جميع الحقوق محفوظة.</span>
+    </p>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ============ QR CORNER WIDGET ============ -->
+<div class="qr-widget" id="qrWidget">
+  <button class="qr-close" id="qrClose" type="button" aria-label="Dismiss">&times;</button>
+  <a href="https://www.linkedin.com/in/faisal-alharbi-062622360" target="_blank" rel="noopener" class="qr-link">
+    <img src="assets/qr-linkedin.png" width="88" height="88" alt="QR code linking to LinkedIn profile" />
+    <span class="qr-caption">
+      <span class="t-en">Scan to connect on LinkedIn</span>
+      <span class="t-ar">امسح للتواصل عبر LinkedIn</span>
+    </span>
+  </a>
+</div>
+
+<script src="script.js" defer></script>
 </body>
 </html>
