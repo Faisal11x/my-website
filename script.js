@@ -53,6 +53,7 @@ const EXPERIENCE = [
     role: { en: "Procurement Specialist", ar: "أخصائي مشتريات" },
     company: { en: "Nahdi Logistics", ar: "نهدي لوجستكس" },
     period: { en: "Mar 2026 – Present", ar: "مارس 2026 – حتى الآن" },
+    doc: { id: "tamheer-hrdf-certificate" },
     points: [
       { en: "Completed the Tamheer program (6 months) and was retained as a full-time Procurement Specialist, continuing in the role", ar: "أكملت برنامج تمهير (6 أشهر) وتم تثبيتي بعدها كأخصائي مشتريات بدوام كامل، وأستمر في الدور حتى الآن" },
       { en: "Ran daily PR/PO review and validation on Oracle Fusion, keeping requisition-to-order accuracy high and rework low", ar: "مراجعة واعتماد طلبات وأوامر الشراء اليومية عبر Oracle Fusion، مع الحفاظ على دقة عالية وتقليل الأخطاء" },
@@ -236,11 +237,15 @@ const COURSES = [
 ];
 
 // Education + languages — shown as two compact cards in the About section
+// Matches the official record exactly (graduation certificate + KAU
+// student portal): Department = Supply Chain Management & Maritime
+// Business; Specialization = Ports & Maritime Transportation. Both are
+// real, separate fields on the official record — shown together.
 const EDUCATION = {
   icon: "document",
-  degree: { en: "Bachelor's Degree in Supply Chain Management & Maritime Business", ar: "بكالوريوس في إدارة سلسلة الإمداد والأعمال البحرية" },
-  school: { en: "King Abdulaziz University", ar: "جامعة الملك عبدالعزيز" },
-  meta: { en: "GPA: 4.15 / 5.00  ·  2022 – 2025", ar: "المعدل: 4.15 / 5.00  ·  2022 – 2025" },
+  degree: { en: "Bachelor of Science in Supply Chain Management & Maritime Business", ar: "بكالوريوس علوم في إدارة سلاسل الإمداد والأعمال البحرية" },
+  school: { en: "King Abdulaziz University — Faculty of Maritime Studies", ar: "جامعة الملك عبدالعزيز — كلية الدراسات البحرية" },
+  meta: { en: "Specialization: Ports & Maritime Transportation  ·  GPA: 4.15 / 5.00 (Very Good)  ·  2022 – 2026", ar: "التخصص: الموانئ والنقل البحري  ·  المعدل: 4.15 / 5.00 (جيد جدًا)  ·  2022 – 2026" },
 };
 
 const LANGUAGES = {
@@ -249,6 +254,36 @@ const LANGUAGES = {
     { en: "Arabic — Native", ar: "العربية — اللغة الأم" },
     { en: "English — Professional Working Proficiency", ar: "الإنجليزية — كفاءة عملية احترافية" },
   ],
+};
+
+// Academic documents — shown as small "view document" links on the
+// Education card. National ID numbers visible on the originals (both
+// Western and Eastern Arabic-Indic digit forms) have been redacted.
+const EDUCATION_DOCS = [
+  {
+    id: "degree-certificate",
+    title: { en: "Graduation Certificate", ar: "وثيقة التخرج" },
+    issuer: { en: "King Abdulaziz University", ar: "جامعة الملك عبدالعزيز" },
+  },
+  {
+    id: "excellence-2024-2025",
+    title: { en: "Certificate of Excellence — 2024/2025", ar: "شهادة تفوق — 2024/2025" },
+    issuer: { en: "King Abdulaziz University", ar: "جامعة الملك عبدالعزيز" },
+  },
+  {
+    id: "excellence-2025-2026",
+    title: { en: "Certificate of Excellence — 2025/2026", ar: "شهادة تفوق — 2025/2026" },
+    issuer: { en: "King Abdulaziz University", ar: "جامعة الملك عبدالعزيز" },
+  },
+];
+
+// Official proof of the Tamheer / Graduate Development Program claim on
+// the Nahdi Logistics experience entry — shown as a "view certificate"
+// link on that timeline card.
+const TAMHEER_DOC = {
+  id: "tamheer-hrdf-certificate",
+  title: { en: "On-the-Job Training Certificate (Tamheer)", ar: "شهادة التدريب على رأس العمل (تمهير)" },
+  issuer: { en: "Human Resources Development Fund (HRDF)", ar: "صندوق تنمية الموارد البشرية (هدف)" },
 };
 
 // Projects — conceptual/illustrative, clearly labeled as such
@@ -344,12 +379,24 @@ function renderEducationLanguages() {
       <div class="icon-wrap">${icon(EDUCATION.icon, 20)}</div>
       <h3>${bi(EDUCATION.degree)}</h3>
       <p>${bi(EDUCATION.school)}<br/>${bi(EDUCATION.meta)}</p>
+      <div class="doc-links">
+        ${EDUCATION_DOCS.map(
+          (d) => `<button type="button" class="doc-link" data-cert="${d.id}">
+            ${icon("fileCheck", 13)}
+            ${bi(d.title)}
+          </button>`
+        ).join("")}
+      </div>
     </div>
     <div class="card reveal">
       <div class="icon-wrap">${icon(LANGUAGES.icon, 20)}</div>
       <h3><span class="t-en">Languages</span><span class="t-ar">اللغات</span></h3>
       <p>${LANGUAGES.items.map((l) => bi(l)).join("<br/>")}</p>
     </div>`;
+
+  grid.querySelectorAll(".doc-link").forEach((btn) => {
+    btn.addEventListener("click", () => openCertLightbox(btn.dataset.cert));
+  });
 }
 
 function renderStats() {
@@ -389,9 +436,24 @@ function renderTimeline() {
         <div class="timeline-tags">
           ${e.tags.map((t) => `<span class="timeline-tag">${icon(t.icon, 13)}${bi(t.label)}</span>`).join("")}
         </div>
+        ${
+          e.doc
+            ? `<div class="doc-links">
+                <button type="button" class="doc-link" data-cert="${e.doc.id}">
+                  ${icon("fileCheck", 13)}
+                  <span class="t-en">View Certificate</span>
+                  <span class="t-ar">عرض الشهادة</span>
+                </button>
+              </div>`
+            : ""
+        }
       </div>
     </div>`
   ).join("");
+
+  wrap.querySelectorAll(".doc-link").forEach((btn) => {
+    btn.addEventListener("click", () => openCertLightbox(btn.dataset.cert));
+  });
 }
 
 let workflowTimer = null;
@@ -1134,7 +1196,10 @@ function initQrWidget() {
 let certLightboxLastFocus = null;
 
 function openCertLightbox(certId) {
-  const course = COURSES.find((c) => c.id === certId);
+  const course =
+    COURSES.find((c) => c.id === certId) ||
+    EDUCATION_DOCS.find((c) => c.id === certId) ||
+    (TAMHEER_DOC.id === certId ? TAMHEER_DOC : null);
   const lightbox = document.getElementById("certLightbox");
   const img = document.getElementById("certLightboxImg");
   const caption = document.getElementById("certLightboxCaption");
