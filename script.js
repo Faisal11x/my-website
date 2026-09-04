@@ -54,7 +54,7 @@ const EXPERIENCE = [
     company: { en: "Nahdi Logistics", ar: "نهدي لوجستكس" },
     period: { en: "Mar 2026 – Present", ar: "مارس 2026 – حتى الآن" },
     points: [
-      { en: "Completed the company's Graduate Program (6 months) and was retained as a full-time Procurement Specialist, continuing in the role", ar: "أكملت برنامج الخريجين (6 أشهر) وتم تثبيتي بعدها كأخصائي مشتريات بدوام كامل، وأستمر في الدور حتى الآن" },
+      { en: "Completed the Tamheer program (6 months) and was retained as a full-time Procurement Specialist, continuing in the role", ar: "أكملت برنامج تمهير (6 أشهر) وتم تثبيتي بعدها كأخصائي مشتريات بدوام كامل، وأستمر في الدور حتى الآن" },
       { en: "Ran daily PR/PO review and validation on Oracle Fusion, keeping requisition-to-order accuracy high and rework low", ar: "مراجعة واعتماد طلبات وأوامر الشراء اليومية عبر Oracle Fusion، مع الحفاظ على دقة عالية وتقليل الأخطاء" },
       { en: "Tracked supplier performance and followed up consistently to protect on-time delivery", ar: "متابعة أداء الموردين بشكل دوري لضمان الالتزام بمواعيد التسليم" },
       { en: "Analyzed competing quotations (RFQ) across suppliers to support cost-effective sourcing decisions", ar: "تحليل عروض الأسعار التنافسية بين الموردين لدعم قرارات توريد فعّالة من حيث التكلفة" },
@@ -164,6 +164,7 @@ const CERTIFICATIONS = [
   { en: "Logistics & Operations in Events", ar: "لوجستيات وعمليات الفعاليات" },
   { en: "E-Retail & Supply Chain", ar: "التجارة الإلكترونية وسلسلة الإمداد" },
   { en: "Event Logistics Management", ar: "إدارة الخدمات اللوجستية للفعاليات" },
+  { en: "Supply Chain Logistics", ar: "لوجستيات سلسلة الإمداد" },
 ];
 
 // Education + languages — shown as two compact cards in the About section
